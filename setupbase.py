@@ -63,7 +63,7 @@ name = 'notebook'
 
 # release.py contains version, authors, license, url, keywords, etc.
 version_ns = {}
-execfile(pjoin(repo_root, name, 'version.py'), version_ns)
+execfile(pjoin(repo_root, name, '_version.py'), version_ns)
 
 version = version_ns['__version__']
 
