@@ -6,6 +6,10 @@ FROM ubuntu:14.04
 
 MAINTAINER Project Jupyter <jupyter@googlegroups.com>
 
+# BBP proxy configuration
+ENV http_proxy=http://bbpproxy.epfl.ch:80/ https_proxy=http://bbpproxy.epfl.ch:80/
+ENV no_proxy=169.254.169.254,localhost,127.0.0.1,*.epfl.ch,epfl.ch,*.humanbrainproject.eu,humanbrainproject.eu
+
 # Not essential, but wise to set the lang
 # Note: Users with other languages should set this in their derivative image
 ENV LANGUAGE en_US.UTF-8
