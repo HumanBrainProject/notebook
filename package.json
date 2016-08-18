@@ -9,7 +9,11 @@
     "url": "https://github.com/jupyter/notebook.git"
   },
   "watch": {
-    "build": "notebook/static/**/{*.js,*.less}"
+    "build": {
+      "patterns": ["notebook/static"],
+      "extensions": "js,css,less",
+      "ignore": "*.min.*"
+    }
   },
   "scripts": {
     "bower": "bower install",
