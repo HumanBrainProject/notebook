@@ -229,6 +229,8 @@ define([
             '#toggle_all_output': 'toggle-all-cells-output-collapsed',
             '#toggle_all_output_scroll': 'toggle-all-cells-output-scrolled',
             '#clear_all_output': 'clear-all-cells-output',
+            // HBP collab actions
+            '#collab_storage_download': 'collab-storage-download'
         };
 
         for(var idx in id_actions_dict){
