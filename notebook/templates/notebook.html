@@ -74,6 +74,13 @@ data-notebook-path="{{notebook_path | urlencode}}"
             <span id="notification_area"></span>
             <div class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
+                <!-- HBP: start custom File menu -->
+                <li id="hbp_file_nav_item" class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">File</a>
+                    <ul id="hbp_file_menu" class="dropdown-menu">
+                        <li id="collab_storage_download"><a href="#">Download</a></li>
+                    </ul>
+                </li>
+                <!-- HBP: end custom File menu -->
                 <li id="file_nav_item" class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">File</a>
                     <ul id="file_menu" class="dropdown-menu">
                         <li id="new_notebook" class="dropdown-submenu">
@@ -121,11 +128,6 @@ data-notebook-path="{{notebook_path | urlencode}}"
                         <li id="kill_and_exit"
                             title="Shutdown this notebook's kernel, and close this window">
                             <a href="#" >Close and Halt</a></li>
-                    </ul>
-                </li>
-                <li id="hbp_file_nav_item" class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">File</a>
-                    <ul id="hbp_file_menu" class="dropdown-menu">
-                        <li id="collab_storage_download"><a href="#">Download</a></li>
                     </ul>
                 </li>
                 <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Edit</a>
