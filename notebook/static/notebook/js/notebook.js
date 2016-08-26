@@ -308,10 +308,10 @@ define(function (require) {
             expand_time(time);
         });
 
-
         // Firefox 22 broke $(window).on("beforeunload")
         // I'm not sure why or how.
         window.onbeforeunload = function (e) {
+            e.preventDefault();
             // TODO: Make killing the kernel configurable.
             var kill_kernel = false;
             if (kill_kernel) {
