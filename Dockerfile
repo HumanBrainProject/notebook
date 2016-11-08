@@ -67,8 +67,8 @@ RUN curl -O https://bootstrap.pypa.io/get-pip.py && \
     rm -rf /root/.cache
 
 # Install some dependencies.
-RUN pip2 --no-cache-dir install ipython==4.2.1 && \
-    pip3 --no-cache-dir install ipython==4.2.1 && \
+RUN pip2 --no-cache-dir install ipython==4.1.2 && \
+    pip3 --no-cache-dir install ipython==4.1.2 && \
     pip2 --no-cache-dir install ipykernel && \
     pip3 --no-cache-dir install ipykernel && \
     \
