@@ -380,7 +380,12 @@ class ZMQChannelsHandler(AuthenticatedZMQStreamHandler):
         self.log.debug("Websocket closed %s", self.session_key)
         # unregister myself as an open session (only if it's really me)
         if self._open_sessions.get(self.session_key) is self:
+            # close session
+            sm = self.session_manager
+            session_id = sm.get_session(kernel_id=self.kernel_id)["id"]
+            sm.delete_session(session_id)
             self._open_sessions.pop(self.session_key)
+
         km = self.kernel_manager
         if self.kernel_id in km:
             km.remove_restart_callback(
@@ -399,7 +404,7 @@ class ZMQChannelsHandler(AuthenticatedZMQStreamHandler):
                 socket = stream.socket
                 stream.close()
                 socket.close()
-        
+
         self.channels = {}
         self._close_future.set_result(None)
 
